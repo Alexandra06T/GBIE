@@ -1,0 +1,23 @@
+- Team ID
+    GBIE
+
+- Task ID
+    6.1.1
+    
+- Run ID
+    DuoHead3
+
+- Type of training applied
+    BioClinical Modern BERT finetuning, 2 heads: one for boundary decision and one for span classification
+
+- Pre-processing methods
+    Converted training annotations into a format suitable for Modern BERT finetune. Concatenated the title and the abstract and shifted the indexes
+
+- Training data used
+    Bronze, Silver, Silver 2025 and Gold datasets
+
+- Relevant details of the run
+    Boundary-aware pooling, adjusted hyperparameters
+
+- A link to a GitHub repository enabling easy reproducibility of the run
+    https://github.com/Alexandra06T/GBIE

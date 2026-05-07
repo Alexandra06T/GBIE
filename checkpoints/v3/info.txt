@@ -1,0 +1,113 @@
+ Loading weights: 100% 134/134 [00:03<00:00, 58.99it/s][transformers] ModernBertModel LOAD REPORT from: thomas-sounack/BioClinical-ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.dense.weight | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Starting stage 1...
+
+=======================================================
+Stage 1 | 5 epochs | lr=0.0002
+Trainable parameters: 738,819
+=======================================================
+3it [00:02,  1.26it/s]/tmp/ipykernel_11990/1731677133.py:106: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+372it [03:38,  1.70it/s]  Epoch 1/5 | loss=1.6004
+
+  Val{'micro_f1': 0.04219993032796082, 'micro_precision': 0.03741183685984747, 'micro_recall': 0.04839349464496295, 'macro_f1': 0.021024974486272274, 'class_stats': {0: {'tp': 6, 'fp': 210, 'fn': 163}, 1: {'tp': 2, 'fp': 117, 'fn': 150}, 2: {'tp': 13, 'fp': 629, 'fn': 126}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 78, 'fp': 1378, 'fn': 288}, 5: {'tp': 0, 'fp': 146, 'fn': 64}, 6: {'tp': 0, 'fp': 0, 'fn': 793}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 3, 'fn': 59}, 9: {'tp': 0, 'fp': 111, 'fn': 63}, 10: {'tp': 18, 'fp': 370, 'fn': 174}, 11: {'tp': 5, 'fp': 175, 'fn': 226}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_0
+372it [03:38,  1.71it/s]  Epoch 2/5 | loss=0.5018
+
+  Val{'micro_f1': 0.059015267994254626, 'micro_precision': 0.05199516324061306, 'micro_recall': 0.0682268940896199, 'macro_f1': 0.03181772522198505, 'class_stats': {0: {'tp': 3, 'fp': 153, 'fn': 166}, 1: {'tp': 2, 'fp': 224, 'fn': 150}, 2: {'tp': 10, 'fp': 406, 'fn': 129}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 102, 'fp': 1728, 'fn': 264}, 5: {'tp': 0, 'fp': 68, 'fn': 64}, 6: {'tp': 0, 'fp': 0, 'fn': 793}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 16, 'fn': 59}, 9: {'tp': 0, 'fp': 25, 'fn': 63}, 10: {'tp': 20, 'fp': 167, 'fn': 172}, 11: {'tp': 35, 'fp': 348, 'fn': 196}, 12: {'tp': 0, 'fp': 1, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_1
+372it [03:37,  1.71it/s]  Epoch 3/5 | loss=0.4630
+
+  Val{'micro_f1': 0.05847546069787854, 'micro_precision': 0.0520930232557978, 'micro_recall': 0.06664022213404734, 'macro_f1': 0.03189109178628191, 'class_stats': {0: {'tp': 2, 'fp': 123, 'fn': 167}, 1: {'tp': 2, 'fp': 218, 'fn': 150}, 2: {'tp': 10, 'fp': 414, 'fn': 129}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 98, 'fp': 1711, 'fn': 268}, 5: {'tp': 0, 'fp': 55, 'fn': 64}, 6: {'tp': 0, 'fp': 0, 'fn': 793}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 14, 'fn': 59}, 9: {'tp': 0, 'fp': 17, 'fn': 63}, 10: {'tp': 20, 'fp': 156, 'fn': 172}, 11: {'tp': 36, 'fp': 348, 'fn': 195}, 12: {'tp': 0, 'fp': 1, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_2
+372it [03:37,  1.71it/s]  Epoch 4/5 | loss=0.4433
+
+  Val{'micro_f1': 0.0665905005765359, 'micro_precision': 0.056572379367704775, 'micro_recall': 0.08092026973420034, 'macro_f1': 0.037933530810703046, 'class_stats': {0: {'tp': 3, 'fp': 109, 'fn': 166}, 1: {'tp': 3, 'fp': 234, 'fn': 149}, 2: {'tp': 11, 'fp': 502, 'fn': 128}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 95, 'fp': 1786, 'fn': 271}, 5: {'tp': 0, 'fp': 62, 'fn': 64}, 6: {'tp': 0, 'fp': 0, 'fn': 793}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 28, 'fn': 59}, 9: {'tp': 0, 'fp': 33, 'fn': 63}, 10: {'tp': 29, 'fp': 220, 'fn': 163}, 11: {'tp': 63, 'fp': 427, 'fn': 168}, 12: {'tp': 0, 'fp': 1, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_3
+372it [03:37,  1.71it/s]  Epoch 5/5 | loss=0.3888
+
+  Val{'micro_f1': 0.09140638736558708, 'micro_precision': 0.0823267641449198, 'micro_recall': 0.102737009123323, 'macro_f1': 0.06205807512485993, 'class_stats': {0: {'tp': 2, 'fp': 17, 'fn': 167}, 1: {'tp': 5, 'fp': 302, 'fn': 147}, 2: {'tp': 14, 'fp': 844, 'fn': 125}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 49, 'fp': 904, 'fn': 317}, 5: {'tp': 0, 'fp': 36, 'fn': 64}, 6: {'tp': 0, 'fp': 0, 'fn': 793}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 50, 'fn': 59}, 9: {'tp': 0, 'fp': 31, 'fn': 63}, 10: {'tp': 83, 'fp': 295, 'fn': 109}, 11: {'tp': 106, 'fp': 407, 'fn': 125}, 12: {'tp': 0, 'fp': 1, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_4
+Finished stage 1
+Starting stage 2...
+
+=======================================================
+Stage 2 | 5 epochs | lr=0.001
+Trainable parameters: 1,781,006
+=======================================================
+372it [07:12,  1.16s/it]  Epoch 1/5 | loss=1.5042
+
+  Val{'micro_f1': 0.7470881858569467, 'micro_precision': 0.7853082641010996, 'micro_recall': 0.7124157080520775, 'macro_f1': 0.6764652046652815, 'class_stats': {0: {'tp': 132, 'fp': 81, 'fn': 37}, 1: {'tp': 119, 'fp': 11, 'fn': 33}, 2: {'tp': 61, 'fp': 23, 'fn': 78}, 3: {'tp': 106, 'fp': 55, 'fn': 77}, 4: {'tp': 200, 'fp': 99, 'fn': 166}, 5: {'tp': 37, 'fp': 8, 'fn': 27}, 6: {'tp': 652, 'fp': 64, 'fn': 141}, 7: {'tp': 50, 'fp': 19, 'fn': 25}, 8: {'tp': 27, 'fp': 14, 'fn': 32}, 9: {'tp': 13, 'fp': 20, 'fn': 50}, 10: {'tp': 167, 'fp': 39, 'fn': 25}, 11: {'tp': 210, 'fp': 47, 'fn': 21}, 12: {'tp': 22, 'fp': 11, 'fn': 13}}}
+  --> Checkpoint saved: stage_2_epoch_0
+372it [07:11,  1.16s/it]  Epoch 2/5 | loss=1.2244
+
+  Val{'micro_f1': 0.758164530298426, 'micro_precision': 0.7915407854981478, 'micro_recall': 0.7274890916300168, 'macro_f1': 0.6973005918631762, 'class_stats': {0: {'tp': 132, 'fp': 67, 'fn': 37}, 1: {'tp': 130, 'fp': 15, 'fn': 22}, 2: {'tp': 63, 'fp': 24, 'fn': 76}, 3: {'tp': 114, 'fp': 43, 'fn': 69}, 4: {'tp': 200, 'fp': 96, 'fn': 166}, 5: {'tp': 40, 'fp': 6, 'fn': 24}, 6: {'tp': 649, 'fp': 52, 'fn': 144}, 7: {'tp': 54, 'fp': 18, 'fn': 21}, 8: {'tp': 25, 'fp': 11, 'fn': 34}, 9: {'tp': 21, 'fp': 57, 'fn': 42}, 10: {'tp': 167, 'fp': 38, 'fn': 25}, 11: {'tp': 217, 'fp': 48, 'fn': 14}, 12: {'tp': 22, 'fp': 8, 'fn': 13}}}
+  --> Checkpoint saved: stage_2_epoch_1
+372it [07:11,  1.16s/it]  Epoch 3/5 | loss=1.1857
+
+  Val{'micro_f1': 0.7558792919046479, 'micro_precision': 0.7950963222413332, 'micro_recall': 0.7203490678299403, 'macro_f1': 0.6980722491338665, 'class_stats': {0: {'tp': 131, 'fp': 63, 'fn': 38}, 1: {'tp': 128, 'fp': 14, 'fn': 24}, 2: {'tp': 62, 'fp': 20, 'fn': 77}, 3: {'tp': 114, 'fp': 42, 'fn': 69}, 4: {'tp': 180, 'fp': 76, 'fn': 186}, 5: {'tp': 42, 'fp': 13, 'fn': 22}, 6: {'tp': 645, 'fp': 49, 'fn': 148}, 7: {'tp': 55, 'fp': 20, 'fn': 20}, 8: {'tp': 27, 'fp': 11, 'fn': 32}, 9: {'tp': 26, 'fp': 67, 'fn': 37}, 10: {'tp': 167, 'fp': 37, 'fn': 25}, 11: {'tp': 217, 'fp': 45, 'fn': 14}, 12: {'tp': 22, 'fp': 11, 'fn': 13}}}
+  --> Checkpoint saved: stage_2_epoch_2
+372it [07:09,  1.16s/it]  Epoch 4/5 | loss=1.1949
+
+  Val{'micro_f1': 0.7589528790823972, 'micro_precision': 0.8039041703634411, 'micro_recall': 0.7187623958743679, 'macro_f1': 0.6989190407772099, 'class_stats': {0: {'tp': 129, 'fp': 56, 'fn': 40}, 1: {'tp': 127, 'fp': 11, 'fn': 25}, 2: {'tp': 61, 'fp': 18, 'fn': 78}, 3: {'tp': 104, 'fp': 32, 'fn': 79}, 4: {'tp': 187, 'fp': 77, 'fn': 179}, 5: {'tp': 39, 'fp': 11, 'fn': 25}, 6: {'tp': 647, 'fp': 54, 'fn': 146}, 7: {'tp': 57, 'fp': 27, 'fn': 18}, 8: {'tp': 28, 'fp': 11, 'fn': 31}, 9: {'tp': 24, 'fp': 47, 'fn': 39}, 10: {'tp': 168, 'fp': 37, 'fn': 24}, 11: {'tp': 219, 'fp': 51, 'fn': 12}, 12: {'tp': 22, 'fp': 10, 'fn': 13}}}
+  --> Checkpoint saved: stage_2_epoch_3
+372it [07:12,  1.16s/it]  Epoch 5/5 | loss=1.2026
+
+  Val{'micro_f1': 0.7671060886411806, 'micro_precision': 0.8117803365806857, 'micro_recall': 0.7270924236411237, 'macro_f1': 0.7007090079468563, 'class_stats': {0: {'tp': 125, 'fp': 51, 'fn': 44}, 1: {'tp': 133, 'fp': 15, 'fn': 19}, 2: {'tp': 63, 'fp': 22, 'fn': 76}, 3: {'tp': 112, 'fp': 36, 'fn': 71}, 4: {'tp': 223, 'fp': 130, 'fn': 143}, 5: {'tp': 36, 'fp': 3, 'fn': 28}, 6: {'tp': 646, 'fp': 43, 'fn': 147}, 7: {'tp': 50, 'fp': 6, 'fn': 25}, 8: {'tp': 25, 'fp': 17, 'fn': 34}, 9: {'tp': 18, 'fp': 38, 'fn': 45}, 10: {'tp': 166, 'fp': 26, 'fn': 26}, 11: {'tp': 214, 'fp': 29, 'fn': 17}, 12: {'tp': 22, 'fp': 9, 'fn': 13}}}
+  --> Checkpoint saved: stage_2_epoch_4
+Finished stage 2
+Starting stage 3...
+
+=======================================================
+Stage 3 | 10 epochs | lr=5e-05
+Trainable parameters: 2,519,825
+=======================================================
+244it [05:02,  1.24s/it]  Epoch 1/10 | loss=1.7620
+
+  Val{'micro_f1': 0.7775253041896546, 'micro_precision': 0.8112068965513745, 'micro_recall': 0.7465291550968876, 'macro_f1': 0.7239232710140627, 'class_stats': {0: {'tp': 138, 'fp': 51, 'fn': 31}, 1: {'tp': 121, 'fp': 13, 'fn': 31}, 2: {'tp': 77, 'fp': 31, 'fn': 62}, 3: {'tp': 126, 'fp': 36, 'fn': 57}, 4: {'tp': 196, 'fp': 80, 'fn': 170}, 5: {'tp': 50, 'fp': 26, 'fn': 14}, 6: {'tp': 651, 'fp': 43, 'fn': 142}, 7: {'tp': 62, 'fp': 20, 'fn': 13}, 8: {'tp': 29, 'fp': 11, 'fn': 30}, 9: {'tp': 25, 'fp': 50, 'fn': 38}, 10: {'tp': 168, 'fp': 24, 'fn': 24}, 11: {'tp': 214, 'fp': 39, 'fn': 17}, 12: {'tp': 25, 'fp': 14, 'fn': 10}}}
+  --> Checkpoint saved: stage_3_epoch_0
+244it [05:05,  1.25s/it]  Epoch 2/10 | loss=1.7103
+
+  Val{'micro_f1': 0.7720042412836257, 'micro_precision': 0.8295350957152099, 'micro_recall': 0.721935739785513, 'macro_f1': 0.7088798012542111, 'class_stats': {0: {'tp': 127, 'fp': 39, 'fn': 42}, 1: {'tp': 124, 'fp': 10, 'fn': 28}, 2: {'tp': 69, 'fp': 27, 'fn': 70}, 3: {'tp': 117, 'fp': 33, 'fn': 66}, 4: {'tp': 185, 'fp': 68, 'fn': 181}, 5: {'tp': 48, 'fp': 36, 'fn': 16}, 6: {'tp': 639, 'fp': 40, 'fn': 154}, 7: {'tp': 58, 'fp': 22, 'fn': 17}, 8: {'tp': 27, 'fp': 8, 'fn': 32}, 9: {'tp': 18, 'fp': 37, 'fn': 45}, 10: {'tp': 173, 'fp': 24, 'fn': 19}, 11: {'tp': 213, 'fp': 21, 'fn': 18}, 12: {'tp': 22, 'fp': 9, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_1
+244it [05:06,  1.26s/it]  Epoch 3/10 | loss=1.6882
+
+  Val{'micro_f1': 0.7889793357565219, 'micro_precision': 0.8325991189423645, 'micro_recall': 0.7497024990080327, 'macro_f1': 0.7247601800567263, 'class_stats': {0: {'tp': 132, 'fp': 39, 'fn': 37}, 1: {'tp': 124, 'fp': 11, 'fn': 28}, 2: {'tp': 72, 'fp': 32, 'fn': 67}, 3: {'tp': 126, 'fp': 36, 'fn': 57}, 4: {'tp': 206, 'fp': 75, 'fn': 160}, 5: {'tp': 48, 'fp': 23, 'fn': 16}, 6: {'tp': 664, 'fp': 43, 'fn': 129}, 7: {'tp': 60, 'fp': 22, 'fn': 15}, 8: {'tp': 29, 'fp': 9, 'fn': 30}, 9: {'tp': 20, 'fp': 36, 'fn': 43}, 10: {'tp': 173, 'fp': 23, 'fn': 19}, 11: {'tp': 213, 'fp': 20, 'fn': 18}, 12: {'tp': 23, 'fp': 11, 'fn': 12}}}
+  --> Checkpoint saved: stage_3_epoch_2
+244it [05:05,  1.25s/it]  Epoch 4/10 | loss=1.6779
+
+  Val{'micro_f1': 0.7824250100636786, 'micro_precision': 0.8368730230452612, 'micro_recall': 0.7346291154300933, 'macro_f1': 0.7204595782013119, 'class_stats': {0: {'tp': 131, 'fp': 39, 'fn': 38}, 1: {'tp': 123, 'fp': 9, 'fn': 29}, 2: {'tp': 72, 'fp': 32, 'fn': 67}, 3: {'tp': 118, 'fp': 29, 'fn': 65}, 4: {'tp': 198, 'fp': 65, 'fn': 168}, 5: {'tp': 46, 'fp': 28, 'fn': 18}, 6: {'tp': 651, 'fp': 42, 'fn': 142}, 7: {'tp': 59, 'fp': 20, 'fn': 16}, 8: {'tp': 26, 'fp': 8, 'fn': 33}, 9: {'tp': 24, 'fp': 41, 'fn': 39}, 10: {'tp': 173, 'fp': 19, 'fn': 19}, 11: {'tp': 208, 'fp': 18, 'fn': 23}, 12: {'tp': 23, 'fp': 11, 'fn': 12}}}
+  --> Checkpoint saved: stage_3_epoch_3
+244it [05:04,  1.25s/it]  Epoch 5/10 | loss=1.6734
+
+  Val{'micro_f1': 0.7843631773072525, 'micro_precision': 0.83415288332551, 'micro_recall': 0.7401824672745974, 'macro_f1': 0.72093305985301, 'class_stats': {0: {'tp': 132, 'fp': 39, 'fn': 37}, 1: {'tp': 124, 'fp': 11, 'fn': 28}, 2: {'tp': 72, 'fp': 32, 'fn': 67}, 3: {'tp': 124, 'fp': 31, 'fn': 59}, 4: {'tp': 201, 'fp': 67, 'fn': 165}, 5: {'tp': 47, 'fp': 29, 'fn': 17}, 6: {'tp': 653, 'fp': 42, 'fn': 140}, 7: {'tp': 59, 'fp': 19, 'fn': 16}, 8: {'tp': 27, 'fp': 8, 'fn': 32}, 9: {'tp': 23, 'fp': 43, 'fn': 40}, 10: {'tp': 171, 'fp': 20, 'fn': 21}, 11: {'tp': 211, 'fp': 19, 'fn': 20}, 12: {'tp': 22, 'fp': 11, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_4
+244it [05:06,  1.26s/it]  Epoch 6/10 | loss=1.6729
+
+  Val{'micro_f1': 0.7846024395519888, 'micro_precision': 0.8351992834747716, 'micro_recall': 0.7397857992857042, 'macro_f1': 0.7231319933353662, 'class_stats': {0: {'tp': 132, 'fp': 41, 'fn': 37}, 1: {'tp': 124, 'fp': 10, 'fn': 28}, 2: {'tp': 72, 'fp': 32, 'fn': 67}, 3: {'tp': 120, 'fp': 31, 'fn': 63}, 4: {'tp': 202, 'fp': 71, 'fn': 164}, 5: {'tp': 47, 'fp': 26, 'fn': 17}, 6: {'tp': 652, 'fp': 41, 'fn': 141}, 7: {'tp': 60, 'fp': 17, 'fn': 15}, 8: {'tp': 27, 'fp': 8, 'fn': 32}, 9: {'tp': 22, 'fp': 41, 'fn': 41}, 10: {'tp': 173, 'fp': 20, 'fn': 19}, 11: {'tp': 211, 'fp': 19, 'fn': 20}, 12: {'tp': 23, 'fp': 11, 'fn': 12}}}
+  --> Checkpoint saved: stage_3_epoch_5
+244it [05:08,  1.26s/it]  Epoch 7/10 | loss=1.6713
+
+  Val{'micro_f1': 0.7870428417163694, 'micro_precision': 0.8317137809183606, 'micro_recall': 0.7469258230857807, 'macro_f1': 0.728892674523431, 'class_stats': {0: {'tp': 133, 'fp': 44, 'fn': 36}, 1: {'tp': 123, 'fp': 10, 'fn': 29}, 2: {'tp': 78, 'fp': 34, 'fn': 61}, 3: {'tp': 126, 'fp': 31, 'fn': 57}, 4: {'tp': 204, 'fp': 73, 'fn': 162}, 5: {'tp': 49, 'fp': 29, 'fn': 15}, 6: {'tp': 648, 'fp': 40, 'fn': 145}, 7: {'tp': 61, 'fp': 18, 'fn': 14}, 8: {'tp': 28, 'fp': 8, 'fn': 31}, 9: {'tp': 23, 'fp': 40, 'fn': 40}, 10: {'tp': 172, 'fp': 20, 'fn': 20}, 11: {'tp': 215, 'fp': 22, 'fn': 16}, 12: {'tp': 23, 'fp': 12, 'fn': 12}}}
+  --> Checkpoint saved: stage_3_epoch_6
+244it [05:05,  1.25s/it]  Epoch 8/10 | loss=1.6676
+
+  Val{'micro_f1': 0.7886673657133209, 'micro_precision': 0.837344028520126, 'micro_recall': 0.7453391511302081, 'macro_f1': 0.7253838507552531, 'class_stats': {0: {'tp': 132, 'fp': 37, 'fn': 37}, 1: {'tp': 122, 'fp': 12, 'fn': 30}, 2: {'tp': 73, 'fp': 32, 'fn': 66}, 3: {'tp': 126, 'fp': 32, 'fn': 57}, 4: {'tp': 217, 'fp': 78, 'fn': 149}, 5: {'tp': 47, 'fp': 12, 'fn': 17}, 6: {'tp': 651, 'fp': 41, 'fn': 142}, 7: {'tp': 60, 'fp': 20, 'fn': 15}, 8: {'tp': 26, 'fp': 9, 'fn': 33}, 9: {'tp': 23, 'fp': 45, 'fn': 40}, 10: {'tp': 167, 'fp': 16, 'fn': 25}, 11: {'tp': 215, 'fp': 22, 'fn': 16}, 12: {'tp': 20, 'fp': 9, 'fn': 15}}}
+  --> Checkpoint saved: stage_3_epoch_7
+244it [05:01,  1.23s/it]  Epoch 9/10 | loss=1.6593
+
+  Val{'micro_f1': 0.7859089950978699, 'micro_precision': 0.8336298932380634, 'micro_recall': 0.7433558111857425, 'macro_f1': 0.718171494901156, 'class_stats': {0: {'tp': 130, 'fp': 41, 'fn': 39}, 1: {'tp': 127, 'fp': 12, 'fn': 25}, 2: {'tp': 71, 'fp': 33, 'fn': 68}, 3: {'tp': 124, 'fp': 33, 'fn': 59}, 4: {'tp': 211, 'fp': 72, 'fn': 155}, 5: {'tp': 48, 'fp': 23, 'fn': 16}, 6: {'tp': 650, 'fp': 42, 'fn': 143}, 7: {'tp': 60, 'fp': 22, 'fn': 15}, 8: {'tp': 30, 'fp': 12, 'fn': 29}, 9: {'tp': 17, 'fp': 29, 'fn': 46}, 10: {'tp': 171, 'fp': 18, 'fn': 21}, 11: {'tp': 214, 'fp': 26, 'fn': 17}, 12: {'tp': 21, 'fp': 11, 'fn': 14}}}
+  --> Checkpoint saved: stage_3_epoch_8
+244it [04:59,  1.23s/it]  Epoch 10/10 | loss=1.6505
+
+  Val{'micro_f1': 0.7843302438149818, 'micro_precision': 0.8361023798828756, 'micro_recall': 0.7385957953190248, 'macro_f1': 0.7264378861866565, 'class_stats': {0: {'tp': 129, 'fp': 33, 'fn': 40}, 1: {'tp': 125, 'fp': 11, 'fn': 27}, 2: {'tp': 71, 'fp': 32, 'fn': 68}, 3: {'tp': 128, 'fp': 33, 'fn': 55}, 4: {'tp': 192, 'fp': 56, 'fn': 174}, 5: {'tp': 48, 'fp': 24, 'fn': 16}, 6: {'tp': 645, 'fp': 37, 'fn': 148}, 7: {'tp': 58, 'fp': 31, 'fn': 17}, 8: {'tp': 29, 'fp': 10, 'fn': 30}, 9: {'tp': 27, 'fp': 48, 'fn': 36}, 10: {'tp': 175, 'fp': 18, 'fn': 17}, 11: {'tp': 211, 'fp': 20, 'fn': 20}, 12: {'tp': 24, 'fp': 12, 'fn': 11}}}
+  --> Checkpoint saved: stage_3_epoch_9
+Finished stage 3
+
