@@ -1,0 +1,186 @@
+Training info:
+
+* threshold set to 0.8
+* class weights: tensor([0.7558, 0.6846, 0.6846, 0.4841, 0.2390, 0.9799, 0.1078, 2.0085, 2.7751, 2.4076, 0.4174, 0.3863, 2.0085, 0.5000])
+* stage 1 - 5 epochs; stage 2 - 5 epochs; stage 3 - 10 epochs
+
+
+Results:
+
+ [transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+model.safetensors: 100% 599M/599M [00:05<00:00, 185MB/s]Loading weights: 100% 134/134 [00:00<00:00, 292.40it/s][transformers] ModernBertModel LOAD REPORT from: thomas-sounack/BioClinical-ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Starting stage 1...
+
+=======================================================
+Stage 1 | 5 epochs | lr=0.0002
+Trainable parameters: 738,819
+=======================================================
+3it [00:04,  1.14s/it]/tmp/ipykernel_550/1896132753.py:108: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+372it [03:53,  1.59it/s]  Epoch 1/5 | loss=1.9477
+
+  Val{'micro_f1': 0.03384030368335548, 'micro_precision': 0.03249361080685195, 'micro_recall': 0.03530345101148937, 'macro_f1': 0.012205092606868008, 'class_stats': {0: {'tp': 0, 'fp': 0, 'fn': 169}, 1: {'tp': 0, 'fp': 61, 'fn': 152}, 2: {'tp': 0, 'fp': 0, 'fn': 139}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 0, 'fp': 0, 'fn': 366}, 5: {'tp': 37, 'fp': 1802, 'fn': 27}, 6: {'tp': 52, 'fp': 687, 'fn': 741}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 0, 'fn': 59}, 9: {'tp': 0, 'fp': 98, 'fn': 63}, 10: {'tp': 0, 'fp': 2, 'fn': 192}, 11: {'tp': 0, 'fp': 0, 'fn': 231}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_0
+372it [03:47,  1.64it/s]  Epoch 2/5 | loss=0.4900
+
+  Val{'micro_f1': 0.02300556536478445, 'micro_precision': 0.021610317183680165, 'micro_recall': 0.024593415311374617, 'macro_f1': 0.006946395474207582, 'class_stats': {0: {'tp': 0, 'fp': 0, 'fn': 169}, 1: {'tp': 0, 'fp': 13, 'fn': 152}, 2: {'tp': 0, 'fp': 0, 'fn': 139}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 0, 'fp': 0, 'fn': 366}, 5: {'tp': 54, 'fp': 2379, 'fn': 10}, 6: {'tp': 8, 'fp': 306, 'fn': 785}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 1, 'fn': 59}, 9: {'tp': 0, 'fp': 102, 'fn': 63}, 10: {'tp': 0, 'fp': 6, 'fn': 192}, 11: {'tp': 0, 'fp': 0, 'fn': 231}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_1
+372it [03:47,  1.64it/s]  Epoch 3/5 | loss=0.3979
+
+  Val{'micro_f1': 0.022449388155088533, 'micro_precision': 0.022690437601287403, 'micro_recall': 0.022213407378015783, 'macro_f1': 0.008380056037737268, 'class_stats': {0: {'tp': 0, 'fp': 0, 'fn': 169}, 1: {'tp': 0, 'fp': 15, 'fn': 152}, 2: {'tp': 0, 'fp': 0, 'fn': 139}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 0, 'fp': 0, 'fn': 366}, 5: {'tp': 49, 'fp': 1942, 'fn': 15}, 6: {'tp': 7, 'fp': 199, 'fn': 786}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 1, 'fn': 59}, 9: {'tp': 0, 'fp': 250, 'fn': 63}, 10: {'tp': 0, 'fp': 4, 'fn': 192}, 11: {'tp': 0, 'fp': 1, 'fn': 231}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_2
+372it [03:47,  1.64it/s]  Epoch 4/5 | loss=0.3640
+
+  Val{'micro_f1': 0.020769230269684406, 'micro_precision': 0.020156774916005912, 'micro_recall': 0.021420071400229505, 'macro_f1': 0.006098777329617377, 'class_stats': {0: {'tp': 0, 'fp': 0, 'fn': 169}, 1: {'tp': 0, 'fp': 14, 'fn': 152}, 2: {'tp': 0, 'fp': 0, 'fn': 139}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 0, 'fp': 0, 'fn': 366}, 5: {'tp': 50, 'fp': 2144, 'fn': 14}, 6: {'tp': 4, 'fp': 207, 'fn': 789}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 3, 'fn': 59}, 9: {'tp': 0, 'fp': 254, 'fn': 63}, 10: {'tp': 0, 'fp': 2, 'fn': 192}, 11: {'tp': 0, 'fp': 1, 'fn': 231}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_3
+372it [03:47,  1.63it/s]  Epoch 5/5 | loss=0.3518
+
+  Val{'micro_f1': 0.020598522624953316, 'micro_precision': 0.020190476190468497, 'micro_recall': 0.021023403411336364, 'macro_f1': 0.005664996895063115, 'class_stats': {0: {'tp': 0, 'fp': 0, 'fn': 169}, 1: {'tp': 0, 'fp': 15, 'fn': 152}, 2: {'tp': 0, 'fp': 0, 'fn': 139}, 3: {'tp': 0, 'fp': 0, 'fn': 183}, 4: {'tp': 0, 'fp': 0, 'fn': 366}, 5: {'tp': 50, 'fp': 2123, 'fn': 14}, 6: {'tp': 3, 'fp': 189, 'fn': 790}, 7: {'tp': 0, 'fp': 0, 'fn': 75}, 8: {'tp': 0, 'fp': 5, 'fn': 59}, 9: {'tp': 0, 'fp': 236, 'fn': 63}, 10: {'tp': 0, 'fp': 2, 'fn': 192}, 11: {'tp': 0, 'fp': 2, 'fn': 231}, 12: {'tp': 0, 'fp': 0, 'fn': 35}}}
+  --> Checkpoint saved: stage_1_epoch_4
+Finished stage 1
+Starting stage 2...
+
+=======================================================
+Stage 2 | 5 epochs | lr=0.001
+Trainable parameters: 601,358
+=======================================================
+372it [06:28,  1.04s/it]  Epoch 1/5 | loss=1.7132
+
+  Val{'micro_f1': 0.7108356481455779, 'micro_precision': 0.7706209453193834, 'micro_recall': 0.6596588655292901, 'macro_f1': 0.6630192227608651, 'class_stats': {0: {'tp': 128, 'fp': 67, 'fn': 41}, 1: {'tp': 95, 'fp': 10, 'fn': 57}, 2: {'tp': 72, 'fp': 47, 'fn': 67}, 3: {'tp': 101, 'fp': 21, 'fn': 82}, 4: {'tp': 138, 'fp': 41, 'fn': 228}, 5: {'tp': 43, 'fp': 29, 'fn': 21}, 6: {'tp': 586, 'fp': 40, 'fn': 207}, 7: {'tp': 61, 'fp': 77, 'fn': 14}, 8: {'tp': 20, 'fp': 7, 'fn': 39}, 9: {'tp': 35, 'fp': 77, 'fn': 28}, 10: {'tp': 160, 'fp': 21, 'fn': 32}, 11: {'tp': 204, 'fp': 40, 'fn': 27}, 12: {'tp': 20, 'fp': 18, 'fn': 15}}}
+  --> Checkpoint saved: stage_2_epoch_0
+372it [06:26,  1.04s/it]  Epoch 2/5 | loss=1.3840
+
+  Val{'micro_f1': 0.702099150914496, 'micro_precision': 0.8032703117011736, 'micro_recall': 0.6235620785400144, 'macro_f1': 0.6704218515113788, 'class_stats': {0: {'tp': 127, 'fp': 50, 'fn': 42}, 1: {'tp': 94, 'fp': 9, 'fn': 58}, 2: {'tp': 65, 'fp': 24, 'fn': 74}, 3: {'tp': 105, 'fp': 24, 'fn': 78}, 4: {'tp': 124, 'fp': 38, 'fn': 242}, 5: {'tp': 39, 'fp': 13, 'fn': 25}, 6: {'tp': 513, 'fp': 25, 'fn': 280}, 7: {'tp': 60, 'fp': 53, 'fn': 15}, 8: {'tp': 20, 'fp': 14, 'fn': 39}, 9: {'tp': 40, 'fp': 67, 'fn': 23}, 10: {'tp': 163, 'fp': 25, 'fn': 29}, 11: {'tp': 202, 'fp': 29, 'fn': 29}, 12: {'tp': 20, 'fp': 14, 'fn': 15}}}
+  --> Checkpoint saved: stage_2_epoch_1
+372it [06:27,  1.04s/it]  Epoch 3/5 | loss=1.3438
+
+  Val{'micro_f1': 0.7367752851557534, 'micro_precision': 0.7895691609973744, 'micro_recall': 0.6905989686629549, 'macro_f1': 0.6855419955123071, 'class_stats': {0: {'tp': 132, 'fp': 60, 'fn': 37}, 1: {'tp': 119, 'fp': 16, 'fn': 33}, 2: {'tp': 71, 'fp': 30, 'fn': 68}, 3: {'tp': 111, 'fp': 32, 'fn': 72}, 4: {'tp': 176, 'fp': 74, 'fn': 190}, 5: {'tp': 42, 'fp': 7, 'fn': 22}, 6: {'tp': 584, 'fp': 35, 'fn': 209}, 7: {'tp': 59, 'fp': 43, 'fn': 16}, 8: {'tp': 29, 'fp': 18, 'fn': 30}, 9: {'tp': 27, 'fp': 62, 'fn': 36}, 10: {'tp': 162, 'fp': 26, 'fn': 30}, 11: {'tp': 209, 'fp': 43, 'fn': 22}, 12: {'tp': 20, 'fp': 18, 'fn': 15}}}
+  --> Checkpoint saved: stage_2_epoch_2
+372it [06:26,  1.04s/it]  Epoch 4/5 | loss=1.3189
+
+  Val{'micro_f1': 0.7343283577114585, 'micro_precision': 0.7939142461960379, 'micro_recall': 0.6830622768739854, 'macro_f1': 0.6822064597922994, 'class_stats': {0: {'tp': 133, 'fp': 62, 'fn': 36}, 1: {'tp': 114, 'fp': 19, 'fn': 38}, 2: {'tp': 71, 'fp': 32, 'fn': 68}, 3: {'tp': 111, 'fp': 26, 'fn': 72}, 4: {'tp': 166, 'fp': 64, 'fn': 200}, 5: {'tp': 43, 'fp': 11, 'fn': 21}, 6: {'tp': 581, 'fp': 36, 'fn': 212}, 7: {'tp': 59, 'fp': 40, 'fn': 16}, 8: {'tp': 27, 'fp': 18, 'fn': 32}, 9: {'tp': 26, 'fp': 51, 'fn': 37}, 10: {'tp': 161, 'fp': 24, 'fn': 31}, 11: {'tp': 210, 'fp': 49, 'fn': 21}, 12: {'tp': 20, 'fp': 15, 'fn': 15}}}
+  --> Checkpoint saved: stage_2_epoch_3
+372it [06:30,  1.05s/it]  Epoch 5/5 | loss=1.3068
+
+  Val{'micro_f1': 0.7374016580181252, 'micro_precision': 0.7946837763516065, 'micro_recall': 0.687822292740703, 'macro_f1': 0.6811543738538154, 'class_stats': {0: {'tp': 132, 'fp': 59, 'fn': 37}, 1: {'tp': 116, 'fp': 19, 'fn': 36}, 2: {'tp': 71, 'fp': 32, 'fn': 68}, 3: {'tp': 111, 'fp': 30, 'fn': 72}, 4: {'tp': 164, 'fp': 57, 'fn': 202}, 5: {'tp': 44, 'fp': 18, 'fn': 20}, 6: {'tp': 593, 'fp': 38, 'fn': 200}, 7: {'tp': 61, 'fp': 44, 'fn': 14}, 8: {'tp': 26, 'fp': 17, 'fn': 33}, 9: {'tp': 26, 'fp': 51, 'fn': 37}, 10: {'tp': 160, 'fp': 23, 'fn': 32}, 11: {'tp': 210, 'fp': 45, 'fn': 21}, 12: {'tp': 20, 'fp': 15, 'fn': 15}}}
+  --> Checkpoint saved: stage_2_epoch_4
+Finished stage 2
+Starting stage 3...
+
+=======================================================
+Stage 3 | 10 epochs | lr=5e-05
+Trainable parameters: 1,340,177
+=======================================================
+244it [04:35,  1.13s/it]  Epoch 1/10 | loss=1.8974
+
+  Val{'micro_f1': 0.7368650529164142, 'micro_precision': 0.8180058083248702, 'micro_recall': 0.6703689012294048, 'macro_f1': 0.6948367151555346, 'class_stats': {0: {'tp': 121, 'fp': 56, 'fn': 48}, 1: {'tp': 122, 'fp': 18, 'fn': 30}, 2: {'tp': 62, 'fp': 28, 'fn': 77}, 3: {'tp': 116, 'fp': 29, 'fn': 67}, 4: {'tp': 156, 'fp': 45, 'fn': 210}, 5: {'tp': 44, 'fp': 18, 'fn': 20}, 6: {'tp': 559, 'fp': 27, 'fn': 234}, 7: {'tp': 65, 'fp': 45, 'fn': 10}, 8: {'tp': 28, 'fp': 17, 'fn': 31}, 9: {'tp': 35, 'fp': 51, 'fn': 28}, 10: {'tp': 159, 'fp': 16, 'fn': 33}, 11: {'tp': 206, 'fp': 18, 'fn': 25}, 12: {'tp': 17, 'fp': 8, 'fn': 18}}}
+  --> Checkpoint saved: stage_3_epoch_0
+244it [04:32,  1.12s/it]  Epoch 2/10 | loss=1.8528
+
+  Val{'micro_f1': 0.7297595406487134, 'micro_precision': 0.822067594432991, 'micro_recall': 0.6560888536292518, 'macro_f1': 0.6863104807458738, 'class_stats': {0: {'tp': 114, 'fp': 38, 'fn': 55}, 1: {'tp': 109, 'fp': 18, 'fn': 43}, 2: {'tp': 73, 'fp': 34, 'fn': 66}, 3: {'tp': 109, 'fp': 28, 'fn': 74}, 4: {'tp': 139, 'fp': 39, 'fn': 227}, 5: {'tp': 48, 'fp': 50, 'fn': 16}, 6: {'tp': 565, 'fp': 27, 'fn': 228}, 7: {'tp': 61, 'fp': 29, 'fn': 14}, 8: {'tp': 28, 'fp': 13, 'fn': 31}, 9: {'tp': 28, 'fp': 41, 'fn': 35}, 10: {'tp': 159, 'fp': 13, 'fn': 33}, 11: {'tp': 201, 'fp': 17, 'fn': 30}, 12: {'tp': 20, 'fp': 11, 'fn': 15}}}
+  --> Checkpoint saved: stage_3_epoch_1
+244it [04:34,  1.12s/it]  Epoch 3/10 | loss=1.8292
+
+  Val{'micro_f1': 0.7376802233035963, 'micro_precision': 0.8062088428970808, 'micro_recall': 0.6798889329628401, 'macro_f1': 0.6910826890438859, 'class_stats': {0: {'tp': 116, 'fp': 35, 'fn': 53}, 1: {'tp': 115, 'fp': 17, 'fn': 37}, 2: {'tp': 73, 'fp': 35, 'fn': 66}, 3: {'tp': 120, 'fp': 27, 'fn': 63}, 4: {'tp': 151, 'fp': 46, 'fn': 215}, 5: {'tp': 49, 'fp': 59, 'fn': 15}, 6: {'tp': 582, 'fp': 28, 'fn': 211}, 7: {'tp': 64, 'fp': 50, 'fn': 11}, 8: {'tp': 23, 'fp': 11, 'fn': 36}, 9: {'tp': 30, 'fp': 53, 'fn': 33}, 10: {'tp': 161, 'fp': 15, 'fn': 31}, 11: {'tp': 209, 'fp': 27, 'fn': 22}, 12: {'tp': 21, 'fp': 9, 'fn': 14}}}
+  --> Checkpoint saved: stage_3_epoch_2
+244it [04:33,  1.12s/it]  Epoch 4/10 | loss=1.8157
+
+  Val{'micro_f1': 0.732194363828886, 'micro_precision': 0.8308157099693702, 'micro_recall': 0.6545021816736794, 'macro_f1': 0.6830860639167508, 'class_stats': {0: {'tp': 113, 'fp': 33, 'fn': 56}, 1: {'tp': 100, 'fp': 11, 'fn': 52}, 2: {'tp': 68, 'fp': 24, 'fn': 71}, 3: {'tp': 113, 'fp': 20, 'fn': 70}, 4: {'tp': 156, 'fp': 45, 'fn': 210}, 5: {'tp': 43, 'fp': 35, 'fn': 21}, 6: {'tp': 560, 'fp': 23, 'fn': 233}, 7: {'tp': 63, 'fp': 46, 'fn': 12}, 8: {'tp': 24, 'fp': 13, 'fn': 35}, 9: {'tp': 27, 'fp': 39, 'fn': 36}, 10: {'tp': 160, 'fp': 16, 'fn': 32}, 11: {'tp': 203, 'fp': 22, 'fn': 28}, 12: {'tp': 20, 'fp': 9, 'fn': 15}}}
+  --> Checkpoint saved: stage_3_epoch_3
+244it [04:33,  1.12s/it]  Epoch 5/10 | loss=1.7995
+
+  Val{'micro_f1': 0.7470562576816783, 'micro_precision': 0.8295399515734482, 'micro_recall': 0.6794922649739471, 'macro_f1': 0.7082012211383466, 'class_stats': {0: {'tp': 116, 'fp': 33, 'fn': 53}, 1: {'tp': 131, 'fp': 18, 'fn': 21}, 2: {'tp': 76, 'fp': 31, 'fn': 63}, 3: {'tp': 120, 'fp': 26, 'fn': 63}, 4: {'tp': 153, 'fp': 43, 'fn': 213}, 5: {'tp': 48, 'fp': 50, 'fn': 16}, 6: {'tp': 561, 'fp': 22, 'fn': 232}, 7: {'tp': 62, 'fp': 27, 'fn': 13}, 8: {'tp': 24, 'fp': 12, 'fn': 35}, 9: {'tp': 33, 'fp': 50, 'fn': 30}, 10: {'tp': 160, 'fp': 10, 'fn': 32}, 11: {'tp': 207, 'fp': 20, 'fn': 24}, 12: {'tp': 22, 'fp': 10, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_4
+244it [04:32,  1.12s/it]  Epoch 6/10 | loss=1.7923
+
+  Val{'micro_f1': 0.7408556856072424, 'micro_precision': 0.8396984924618897, 'micro_recall': 0.6628322094404352, 'macro_f1': 0.6959371271006997, 'class_stats': {0: {'tp': 116, 'fp': 29, 'fn': 53}, 1: {'tp': 106, 'fp': 11, 'fn': 46}, 2: {'tp': 75, 'fp': 31, 'fn': 64}, 3: {'tp': 115, 'fp': 23, 'fn': 68}, 4: {'tp': 160, 'fp': 42, 'fn': 206}, 5: {'tp': 47, 'fp': 36, 'fn': 17}, 6: {'tp': 557, 'fp': 23, 'fn': 236}, 7: {'tp': 61, 'fp': 38, 'fn': 14}, 8: {'tp': 21, 'fp': 11, 'fn': 38}, 9: {'tp': 28, 'fp': 39, 'fn': 35}, 10: {'tp': 159, 'fp': 9, 'fn': 33}, 11: {'tp': 204, 'fp': 18, 'fn': 27}, 12: {'tp': 22, 'fp': 9, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_5
+244it [04:34,  1.13s/it]  Epoch 7/10 | loss=1.7860
+
+  Val{'micro_f1': 0.7450374939920531, 'micro_precision': 0.8390461997015206, 'micro_recall': 0.6699722332405117, 'macro_f1': 0.7049171480035653, 'class_stats': {0: {'tp': 114, 'fp': 32, 'fn': 55}, 1: {'tp': 116, 'fp': 13, 'fn': 36}, 2: {'tp': 76, 'fp': 27, 'fn': 63}, 3: {'tp': 117, 'fp': 23, 'fn': 66}, 4: {'tp': 156, 'fp': 40, 'fn': 210}, 5: {'tp': 46, 'fp': 34, 'fn': 18}, 6: {'tp': 562, 'fp': 23, 'fn': 231}, 7: {'tp': 60, 'fp': 31, 'fn': 15}, 8: {'tp': 28, 'fp': 14, 'fn': 31}, 9: {'tp': 29, 'fp': 50, 'fn': 34}, 10: {'tp': 160, 'fp': 9, 'fn': 32}, 11: {'tp': 203, 'fp': 20, 'fn': 28}, 12: {'tp': 22, 'fp': 8, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_6
+244it [04:35,  1.13s/it]  Epoch 8/10 | loss=1.7797
+
+  Val{'micro_f1': 0.7413640384789969, 'micro_precision': 0.8390977443604817, 'micro_recall': 0.6640222134071146, 'macro_f1': 0.7006109339528043, 'class_stats': {0: {'tp': 113, 'fp': 30, 'fn': 56}, 1: {'tp': 118, 'fp': 13, 'fn': 34}, 2: {'tp': 73, 'fp': 26, 'fn': 66}, 3: {'tp': 112, 'fp': 26, 'fn': 71}, 4: {'tp': 157, 'fp': 39, 'fn': 209}, 5: {'tp': 46, 'fp': 35, 'fn': 18}, 6: {'tp': 554, 'fp': 22, 'fn': 239}, 7: {'tp': 59, 'fp': 29, 'fn': 16}, 8: {'tp': 25, 'fp': 15, 'fn': 34}, 9: {'tp': 31, 'fp': 51, 'fn': 32}, 10: {'tp': 160, 'fp': 10, 'fn': 32}, 11: {'tp': 204, 'fp': 17, 'fn': 27}, 12: {'tp': 22, 'fp': 8, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_7
+244it [04:33,  1.12s/it]  Epoch 9/10 | loss=1.7773
+
+  Val{'micro_f1': 0.7424409617660185, 'micro_precision': 0.8368159203975937, 'micro_recall': 0.6671955573182597, 'macro_f1': 0.6994095207878233, 'class_stats': {0: {'tp': 114, 'fp': 30, 'fn': 55}, 1: {'tp': 116, 'fp': 12, 'fn': 36}, 2: {'tp': 74, 'fp': 27, 'fn': 65}, 3: {'tp': 114, 'fp': 26, 'fn': 69}, 4: {'tp': 158, 'fp': 41, 'fn': 208}, 5: {'tp': 46, 'fp': 33, 'fn': 18}, 6: {'tp': 559, 'fp': 23, 'fn': 234}, 7: {'tp': 61, 'fp': 34, 'fn': 14}, 8: {'tp': 25, 'fp': 15, 'fn': 34}, 9: {'tp': 29, 'fp': 50, 'fn': 34}, 10: {'tp': 160, 'fp': 10, 'fn': 32}, 11: {'tp': 204, 'fp': 18, 'fn': 27}, 12: {'tp': 22, 'fp': 9, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_8
+244it [04:34,  1.12s/it]  Epoch 10/10 | loss=1.7743
+
+  Val{'micro_f1': 0.7423136469294481, 'micro_precision': 0.8389999999995805, 'micro_recall': 0.6656088853626871, 'macro_f1': 0.6981052609100403, 'class_stats': {0: {'tp': 114, 'fp': 30, 'fn': 55}, 1: {'tp': 115, 'fp': 12, 'fn': 37}, 2: {'tp': 73, 'fp': 26, 'fn': 66}, 3: {'tp': 114, 'fp': 25, 'fn': 69}, 4: {'tp': 160, 'fp': 41, 'fn': 206}, 5: {'tp': 46, 'fp': 33, 'fn': 18}, 6: {'tp': 558, 'fp': 23, 'fn': 235}, 7: {'tp': 59, 'fp': 34, 'fn': 16}, 8: {'tp': 24, 'fp': 15, 'fn': 35}, 9: {'tp': 29, 'fp': 48, 'fn': 34}, 10: {'tp': 160, 'fp': 10, 'fn': 32}, 11: {'tp': 204, 'fp': 17, 'fn': 27}, 12: {'tp': 22, 'fp': 8, 'fn': 13}}}
+  --> Checkpoint saved: stage_3_epoch_9
+Finished stage 3
+
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+
+============================================================
+Error analysis over 500 examples
+============================================================
+  FN            : 3884
+  FP            : 2412
+  WRONG_LABEL   : 901
+
+Top FP predicted labels (boundary false positives reaching span head):
+pred_label_name
+statistical technique    298
+biomedical technique     240
+anatomical location      234
+bacteria                 217
+drug                     209
+gene                     200
+human                    178
+animal                   178
+food                     175
+DDF                      140
+
+  Mean boundary_score of FPs: 0.6244
+  Mean span_head_conf  of FPs: 0.5471
+  (High conf + high boundary score → boundary head is overconfident)
+  (Low  conf + high boundary score → span head is uncertain, consider raising threshold)
+
+Label confusion pairs (gold → pred):
+     gold_label_name       pred_label_name  count
+            chemical                  gene    233
+            chemical                  drug    124
+            chemical    dietary supplement    109
+  dietary supplement                  food     50
+            bacteria    dietary supplement     38
+  dietary supplement                  drug     27
+  dietary supplement              bacteria     20
+biomedical technique                  food     19
+biomedical technique statistical technique     17
+            chemical                  food     15
+            bacteria            microbiome     14
+                food    dietary supplement     14
+  dietary supplement              chemical     14
+                 DDF                 human     12
+               human                   DDF     12
+
+Most missed gold label types:
+gold_label_name
+DDF                     1601
+chemical                 643
+biomedical technique     294
+microbiome               268
+bacteria                 241
+anatomical location      218
+human                    176
+dietary supplement       129
+animal                   114
+drug                      69
+
+  FNs with boundary_score=0 (boundary head missed entirely): 613 / 3884
+  FNs with boundary_score>0 (boundary found, span head said None): 3271 / 3884
+============================================================
+
+errors details: errors_v1.csv
